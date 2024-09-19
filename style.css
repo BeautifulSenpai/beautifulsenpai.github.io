@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Raleway', sans-serif;
+    color: #fff;
+    font-size: 16px;
+    overflow: hidden;
+}
+
+#preloader {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 1s ease-out, visibility 0s 1s;
+}
+
+#preloader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+body:not(.loaded) .content {
+    visibility: hidden;
+}
+
+body.loaded .content {
+    visibility: visible;
+}
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+.home {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-slide {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.content-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem 0; /* Добавляем вертикальные отступы */
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: 50rem;
+    padding: 1.25rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 0.625rem;
+    margin: auto; /* Центрирование по вертикали */
+}
+
+
+.profile-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.25rem;
+}
+
+.avatar-name-social {
+    display: flex;
+    align-items: flex-start;
+}
+
+.avatar {
+    width: 12.164rem;
+    height: 12.164rem;
+    border-radius: 0.9375rem;
+    object-fit: cover;
+}
+
+.name-social {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.9375rem;
+}
+
+.name {
+    margin: 0;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 0.625rem;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.profile-card {
+    max-width: 50%;
+}
+
+.profile-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.artists-section {
+    margin-bottom: 1.25rem;
+}
+
+.multiple-items {
+    margin: 0 auto;
+}
+
+.artist {
+    text-align: center;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.artist img {
+    width: 6.25rem;
+    height: 6.25rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.625rem;
+}
+
+.artist p {
+    margin-top: 0.3125rem;
+    font-size: 0.875rem;
+}
+
+.skills-section, .languages-section {
+    margin-bottom: 1.25rem;
+}
+
+.skills, .languages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+}
+
+.skills span, .languages span {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0.3125rem 0.625rem;
+    border-radius: 0.3125rem;
+}
+
+
+@media (max-width: 890px) {
+    .content {
+        padding: 0.9375rem;
+    }
+
+    .content-wrapper {
+        padding: 1.5rem 0;
+    }
+
+    .artist img {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .artist p {
+        font-size: 0.75rem;
+    }
+
+    .skills span, .languages span {
+        font-size: 0.875rem;
+    }
+
+    .avatar {
+        width: 10rem;
+        height: 10rem;
+    }
+
+    .profile-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .avatar-name-social {
+        margin-bottom: 1.25rem;
+    }
+
+    .profile-card {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .content-wrapper {
+        padding: 1rem 0;
+    }
+    
+    .artist img {
+        width: 4.375rem;
+        height: 4.375rem;
+    }
+
+    .artist p {
+        font-size: 0.6875rem;
+    }
+
+    .avatar {
+        width: 8rem;
+        height: 8rem;
+    }
+
+    .profile-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .avatar-name-social {
+        margin-bottom: 1.25rem;
+    }
+
+    .profile-card {
+        max-width: 100%;
+    }
+}
