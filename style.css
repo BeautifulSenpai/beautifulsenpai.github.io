@@ -240,12 +240,7 @@ body.loaded .content {
     }
 
     .profile-card {
-        max-width: 100%;
-    }
-
-    .profile-card img{
-        margin-bottom: 1rem;
-        object-fit: contain;
+        width: 90%;
     }
 }
 
@@ -279,11 +274,6 @@ body.loaded .content {
     }
 
     .profile-card {
-        max-width: 100%;
-    }
-
-    .profile-card img{
-        margin-bottom: 1rem;
-        object-fit: contain;
+        max-width: 90%;
     }
 }
