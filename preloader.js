@@ -13,32 +13,31 @@ class Preloader {
             justify-content: center;
             align-items: center;
             z-index: 9999;
-            transition: opacity 1s ease-out, visibility 0s 1s; /* Плавное исчезновение с задержкой для visibility */
+            transition: opacity 1s ease-out, visibility 0s 1s;
         `;
 
-        const text = document.createElement('div');
-        text.textContent = 'よろしく';
-        text.style.cssText = `
-            color: white;
-            font-size: 5rem;
-            font-weight: bold;
+        const gif = document.createElement('img');
+        gif.src = 'assets/bancho.gif';
+        gif.style.cssText = `
+            width: 400px;
+            height: auto;
         `;
 
-        this.preloader.appendChild(text);
+        this.preloader.appendChild(gif);
         document.body.appendChild(this.preloader);
-        document.body.style.overflow = 'hidden';  // Отключаем скролл пока активен прелоадер
+        document.body.style.overflow = 'hidden';
     }
 
     hide() {
-        requestAnimationFrame(() => {  // Оптимизация для плавности
+        requestAnimationFrame(() => {
             setTimeout(() => {
-                this.preloader.style.opacity = '0'; // Плавное изменение opacity
-                this.preloader.style.visibility = 'hidden'; // Скрытие прелоадера после завершения анимации
-                document.body.style.overflow = '';  // Включаем скролл обратно
+                this.preloader.style.opacity = '0';
+                this.preloader.style.visibility = 'hidden';
+                document.body.style.overflow = '';
                 setTimeout(() => {
-                    this.preloader.remove(); // Удаляем элемент после анимации
-                }, 1000); // Даем время для завершения перехода opacity
-            }, 3000); // Задержка перед скрытием прелоадера
+                    this.preloader.remove();
+                }, 1000);
+            }, 3000);
         });
     }
 }
@@ -49,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     preloader.hide = function () {
         setTimeout(() => {
-            document.body.classList.add('loaded'); // Добавляем класс после загрузки
+            document.body.classList.add('loaded');
             document.getElementById('preloader').classList.add('fade-out');
             document.querySelector('.content').classList.add('slide-up');
             document.querySelector('.video-slide').classList.add('fade-in');
@@ -60,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {
         document.getElementById('preloader').classList.add('fade-out');
-        document.body.classList.add('loaded'); // Включаем отображение контента
+        document.body.classList.add('loaded');
         document.querySelector('.content').classList.add('slide-up');
         document.querySelector('.video-slide').classList.add('fade-in');
     }, 3000);
