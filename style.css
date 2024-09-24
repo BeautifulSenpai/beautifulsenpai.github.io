@@ -232,6 +232,10 @@ body.loaded .content {
     .avatar-name-social {
         margin-bottom: 1.25rem;
     }
+
+    .profile-card img{
+        max-width: 100%;
+    }
 }
 
 @media (max-width: 450px) {
@@ -261,5 +265,9 @@ body.loaded .content {
 
     .avatar-name-social {
         margin-bottom: 1.25rem;
+    }
+
+    .profile-card img{
+        max-width: 100%;
     }
 }
