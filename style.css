@@ -129,6 +129,15 @@ body.loaded .content {
 .profile-card {
     max-width: 100%;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-card img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 .artists-section {
@@ -234,8 +243,13 @@ body.loaded .content {
         margin-bottom: 1.25rem;
     }
 
-    .profile-card img{
-        max-width: 100%;
+    .profile-card {
+        width: 100%;
+    }
+
+    .profile-card img {
+        width: 100%;
+        max-height: 150px;
     }
 }
 
@@ -268,7 +282,7 @@ body.loaded .content {
         margin-bottom: 1.25rem;
     }
 
-    .profile-card img{
-        max-width: 100%;
+    .profile-card img {
+        max-height: 120px;
     }
 }
