@@ -27,7 +27,7 @@
                             </div>
                         </div>
                     </div>
-                    
+                    <div id="lanyard-container"></div>
                 </div>
     
                 <div class="skills-section">
@@ -80,16 +80,51 @@
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <script type="text/babel">
-        class CenteredGif extends React.Component {
-            render() {
-                return (
-                    <div className="gif-container">
-                        <img src="assets/anime-cat.gif" className="gif" />
+        const LanyardSpotify = ({ discordId }) => {
+            const [spotifyData, setSpotifyData] = React.useState(null);
+
+            React.useEffect(() => {
+                const fetchData = async () => {
+                    try {
+                        const response = await fetch(`https://api.lanyard.rest/v1/users/${discordId}`);
+                        const data = await response.json();
+                        if (data.data.listening_to_spotify) {
+                            setSpotifyData(data.data.spotify);
+                        } else {
+                            setSpotifyData(null);
+                        }
+                    } catch (error) {
+                        console.error('Error fetching Lanyard data:', error);
+                    }
+                };
+
+                fetchData();
+                const interval = setInterval(fetchData, 30000);
+
+                return () => clearInterval(interval);
+            }, [discordId]);
+
+            if (!spotifyData) return null;
+
+            return (
+                <div className="lanyard-spotify">
+                    <img src={spotifyData.album_art_url} alt="Album Art" className="album-art" />
+                    <div className="song-info">
+                        <p className="song-name">{spotifyData.song}</p>
+                        <p className="artist-name">{spotifyData.artist}</p>
                     </div>
-                );
-            }
-        }
-        
+                </div>
+            );
+        };
+
+        const CenteredGif = () => (
+            <div className="gif-container">
+                <img src="assets/anime-cat.gif" className="gif" alt="Animated cat" />
+            </div>
+        );
+
+        // Render components
+        ReactDOM.render(<LanyardSpotify discordId="375894460166307851" />, document.getElementById('lanyard-container'));
         ReactDOM.render(<CenteredGif />, document.getElementById('gif-container'));
     </script>
 </body>
