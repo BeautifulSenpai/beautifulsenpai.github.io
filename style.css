@@ -70,7 +70,7 @@ body.loaded .content {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2.5rem 0; /* Добавляем вертикальные отступы */
+    padding: 2.5rem 0;
 }
 
 .content {
@@ -81,7 +81,7 @@ body.loaded .content {
     padding: 1.25rem;
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 0.625rem;
-    margin: auto; /* Центрирование по вертикали */
+    margin: auto;
 }
 
 
@@ -133,6 +133,7 @@ body.loaded .content {
 .profile-card img {
     max-width: 100%;
     height: auto;
+    object-fit: contain;
 }
 
 .artists-section {
