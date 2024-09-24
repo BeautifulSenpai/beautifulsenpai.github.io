@@ -242,6 +242,11 @@ body.loaded .content {
     .profile-card {
         max-width: 100%;
     }
+
+    .profile-card img{
+        margin-bottom: 1rem;
+        object-fit: contain;
+    }
 }
 
 @media (max-width: 450px) {
@@ -275,5 +280,10 @@ body.loaded .content {
 
     .profile-card {
         max-width: 100%;
+    }
+
+    .profile-card img{
+        margin-bottom: 1rem;
+        object-fit: contain;
     }
 }
