@@ -2,35 +2,43 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Valery Maraev</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
-    <script src="preloader.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
 </head>
 <body>
+    <div id="preloader" class="preloader">
+        <img src="assets/bancho.gif" alt="Loading...">
+    </div>
+
     <div class="home">
-        <div class="image-slide"></div>
+        <div class="background-image"></div>
         
         <div class="content-wrapper">
             <div class="content">
-                <div class="profile-wrapper">
-                    <div class="avatar-name-social">
-                        <img src="https://sun9-2.userapi.com/impg/drkw05YzhpOOd5XpdgRNXzIX-nxD3UDMp3dNWw/tW60CUNxWWQ.jpg?size=1200x982&quality=95&sign=f213cd0f6a8cbb45a4e1687932123dea&type=album" class="avatar">
+                <section id="about" class="profile">
+                    <div class="profile-info">
+                        <img src="https://sun9-2.userapi.com/impg/drkw05YzhpOOd5XpdgRNXzIX-nxD3UDMp3dNWw/tW60CUNxWWQ.jpg?size=1200x982&quality=95&sign=f213cd0f6a8cbb45a4e1687932123dea&type=album" alt="Valery Maraev" class="avatar">
                         <div class="name-social">
-                            <h1 class="name">Valery <br>Maraev</h1>
+                            <h1>Valery Maraev</h1>
                             <div class="social-icons">
-                                <a href="" target="_blank"><i class="fab fa-vk"></i></a>
-                                <a href="" target="_blank"><i class="fab fa-telegram"></i></a>
+                                <a href="#" target="_blank"><i class="fab fa-vk"></i></a>
+                                <a href="#" target="_blank"><i class="fab fa-telegram"></i></a>
+                                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
                             </div>
                         </div>
                     </div>
-                    <div id="lanyard-container"></div>
-                </div>
+                    <div id="spotify-player" class="spotify-player">
+                    </div>
+                    <p class="bio">Bringing ideas to life through code and creativity.</p>
+                </section>
     
-                <div class="skills-section">
+                <section id="skills" class="section skills-section">
                     <h2>Tech Stack</h2>
                     <div class="skills">
                         <span>C#</span>
@@ -43,88 +51,54 @@
                         <span>HTML</span>
                         <span>CSS</span>
                     </div>
-                </div>
+                </section>
     
-                <div class="languages-section">
+                <section class="section languages-section">
                     <h2>Languages</h2>
                     <div class="languages">
                         <span>Russian</span>
                         <span>English</span>
                         <span>Japanese</span>
                     </div>
-                </div>
-    
-                <div class="artists-section">
+                </section>
+
+                <section id="artists" class="section artists-section">
                     <h2>Favorite Artists</h2>
-                    <div class="multiple-items">
+                    <div class="artist-slider">
                     </div>
-                </div>
+                </section>
 
-                <div class="later">
-                    <a>Потом доделаю. Понял?</a>
-                </div>
-
-                <div class="later2">
-                    <div id="gif-container">
+                <section id="manga" class="section manga-section">
+                    <h2>Favorite Manga</h2>
+                    <div class="manga-grid">
+                        <div class="manga-item">
+                            <img src="https://storage.googleapis.com/pod_public/1300/232876.jpg" alt="One Piece">
+                            <p>Untitled</p>
+                        </div>
+                        <div class="manga-item">
+                            <img src="https://storage.googleapis.com/pod_public/1300/232876.jpg" alt="Berserk">
+                            <p>Untitled</p>
+                        </div>
+                        <div class="manga-item">
+                            <img src="https://storage.googleapis.com/pod_public/1300/232876.jpg" alt="Vagabond">
+                            <p>Untitled</p>
+                        </div>
+                        <div class="manga-item">
+                            <img src="https://storage.googleapis.com/pod_public/1300/232876.jpg" alt="Fullmetal Alchemist">
+                            <p>Untitled</p>
+                        </div>
                     </div>
-                </div>
-                
+                </section>
+
+                <footer class="footer">
+                    <p>&copy; 2024 Valery Maraev. All rights reserved.</p>
+                </footer>
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="script.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="slick/slick.min.js"></script>
-    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-    <script type="text/babel">
-        const LanyardSpotify = ({ discordId }) => {
-            const [spotifyData, setSpotifyData] = React.useState(null);
 
-            React.useEffect(() => {
-                const fetchData = async () => {
-                    try {
-                        const response = await fetch(`https://api.lanyard.rest/v1/users/${discordId}`);
-                        const data = await response.json();
-                        if (data.data.listening_to_spotify) {
-                            setSpotifyData(data.data.spotify);
-                        } else {
-                            setSpotifyData(null);
-                        }
-                    } catch (error) {
-                        console.error('Error fetching Lanyard data:', error);
-                    }
-                };
-
-                fetchData();
-                const interval = setInterval(fetchData, 30000);
-
-                return () => clearInterval(interval);
-            }, [discordId]);
-
-            if (!spotifyData) return null;
-
-            return (
-                <div className="lanyard-spotify">
-                    <img src={spotifyData.album_art_url} alt="Album Art" className="album-art" />
-                    <div className="song-info">
-                        <p className="song-name">{spotifyData.song}</p>
-                        <p className="artist-name">{spotifyData.artist}</p>
-                    </div>
-                </div>
-            );
-        };
-
-        const CenteredGif = () => (
-            <div className="gif-container">
-                <img src="assets/anime-cat.gif" className="gif" alt="Animated cat" />
-            </div>
-        );
-
-        ReactDOM.render(<LanyardSpotify discordId="375894460166307851" />, document.getElementById('lanyard-container'));
-        ReactDOM.render(<CenteredGif />, document.getElementById('gif-container'));
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
